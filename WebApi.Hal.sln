@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Core", "01. Core", "{4659FA04-52C6-445B-B0FB-10EE4D2B2EC7}"
 EndProject
@@ -16,6 +16,11 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi.Hal.Web", "src\WebApi.Hal.Web\WebApi.Hal.Web.xproj", "{C29236B5-EEAF-4832-8277-86147FE83524}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi.Hal.Tests", "tests\WebApi.Hal.Tests\WebApi.Hal.Tests.xproj", "{4D20A2F5-FA59-437D-9321-FE193517588A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6868FC4-16EF-4B5E-9F21-FAFE7721BBDD}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

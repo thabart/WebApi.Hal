@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Mvc.Formatters;
+﻿//using Microsoft.AspNet.Mvc.Formatters;
 using System.IO;
 using WebApi.Hal.Tests.Representations;
 using Xunit;

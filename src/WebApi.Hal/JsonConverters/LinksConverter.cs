@@ -91,10 +91,10 @@ namespace WebApi.Hal.JsonConverters
         public override bool CanConvert(Type objectType)
         {
             var type = typeof(IList<Link>);
-#if DNX451
+#if NET451
             return type.IsAssignableFrom(objectType);
 #endif
-#if DNXCORE50
+#if NETSTANDARD1_5
             return type.GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo());
 #endif
         }

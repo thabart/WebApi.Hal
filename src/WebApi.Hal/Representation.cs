@@ -30,12 +30,15 @@ namespace WebApi.Hal
         {
             // Clear the embeddedResourceProperties in order to make this object re-serializable.
             embeddedResourceProperties.Clear();
-#if DNX451
+            HalJsonConverterContext ctx;
+#if NET451
             if (!ResourceConverter.IsResourceConverterContext(context))
                 return;
+            ctx = (HalJsonConverterContext)context.Context;
+#else
+            ctx= HalJsonConverterContext.Create();
 #endif
 
-            var ctx = HalJsonConverterContext.Create();
             if (!ctx.IsRoot) 
                 return;
             
@@ -56,7 +59,7 @@ namespace WebApi.Hal
         [OnSerialized]
         private void OnSerialized(StreamingContext context)
         {
-#if DNX451
+#if NET451
             if (!ResourceConverter.IsResourceConverterContext(context))
             {
                 return;

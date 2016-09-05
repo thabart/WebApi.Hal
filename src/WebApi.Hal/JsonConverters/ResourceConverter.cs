@@ -12,7 +12,7 @@ namespace WebApi.Hal.JsonConverters
 {
     public class ResourceConverter : JsonConverter
     {
-#if DNX451
+#if NET451
         const StreamingContextStates StreamingContextResourceConverterState = StreamingContextStates.Other;
 #endif
 
@@ -30,7 +30,7 @@ namespace WebApi.Hal.JsonConverters
             this.hypermediaConfiguration = hypermediaConfiguration;
         }
 
-#if DNX451
+#if NET451
         private StreamingContext GetResourceConverterContext()
         {
             var context = (hypermediaConfiguration == null)
@@ -55,7 +55,7 @@ namespace WebApi.Hal.JsonConverters
 				resource.Links = null; // avoid serialization
 
 			// var saveContext = serializer.Context;
-#if DNX451
+#if NET451
             serializer.Context = GetResourceConverterContext();
 #endif
             serializer.Converters.Remove(this);

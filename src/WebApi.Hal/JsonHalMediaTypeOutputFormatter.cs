@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 using WebApi.Hal.JsonConverters;
-using Microsoft.AspNet.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
 
 namespace WebApi.Hal

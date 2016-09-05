@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNet.Mvc.Formatters;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using WebApi.Hal.JsonConverters;
-
+using Microsoft.Extensions.Logging;
 namespace WebApi.Hal
 {
     public class JsonHalMediaTypeInputFormatter : JsonInputFormatter
@@ -17,7 +17,7 @@ namespace WebApi.Hal
 
         #region Constructors
 
-        public JsonHalMediaTypeInputFormatter(IHypermediaResolver hypermediaResolver)
+        public JsonHalMediaTypeInputFormatter(ILogger logger, IHypermediaResolver hypermediaResolver):base(logger)
         {
             if (hypermediaResolver == null)
             {
@@ -28,10 +28,11 @@ namespace WebApi.Hal
             Initialize();
         }
 
-        public JsonHalMediaTypeInputFormatter()
+        public JsonHalMediaTypeInputFormatter(ILogger logger):base(logger)
         {
             Initialize();
         }
+
 
         #endregion
 

@@ -13,10 +13,10 @@ namespace WebApi.Hal
         public static bool IsValidBasicType(this PropertyInfo property)
         {
             bool isValueType = false;
-#if DNX451
+#if NET451
             isValueType = property.PropertyType.IsValueType;
 #endif
-#if DNXCORE50
+#if NETSTANDARD1_5
             isValueType = property.PropertyType.GetTypeInfo().IsValueType;
 #endif
             return !NonSerializedProperties.Contains(property.Name) && property.PropertyType.Namespace == "System"
@@ -26,10 +26,10 @@ namespace WebApi.Hal
         public static bool IsGenericListOfApiResource(this Type type)
         {
             bool isGenericType = false;
-#if DNX451
+#if NET451
             isGenericType = type.IsGenericType;
 #endif
-#if DNXCORE50
+#if NETSTANDARD1_5
             isGenericType = type.GetTypeInfo().IsGenericType;
 #endif
             if (isGenericType && typeof(IList).IsAssignableFrom(type))

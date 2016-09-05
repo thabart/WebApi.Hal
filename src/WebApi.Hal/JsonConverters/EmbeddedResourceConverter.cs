@@ -47,10 +47,10 @@ namespace WebApi.Hal.JsonConverters
 
         public override bool CanConvert(Type objectType)
         {
-#if DNX451
+#if NET451
             return typeof(IList<EmbeddedResource>).IsAssignableFrom(objectType);
 #endif
-#if DNXCORE50
+#if NETSTANDARD1_5
             return typeof(IList<EmbeddedResource>).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo());
 #endif
         }

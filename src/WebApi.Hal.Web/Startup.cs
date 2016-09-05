@@ -20,8 +20,7 @@ namespace WebApi.Hal.Web
 
         #region Public methods
 
-        public Startup(IHostingEnvironment env,
-            IApplicationEnvironment appEnv)
+        public Startup(IHostingEnvironment env)
         {
             // Load all the configuration information from the "json" file & the environment variables.
             var builder = new ConfigurationBuilder()

@@ -1,16 +1,18 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.0-rc2-1",
   "description": "WebApi.Hal",
   "authors": [ "Jake Ginnivan" ],
-  "tags": [ "Hypermedia", "Asp.net", "WebApi", "Json", "Xml", "Hal" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "packOptions": {
+    "tags": [ "Hypermedia", "Asp.net", "WebApi", "Json", "Xml", "Hal" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+},
   "copyright": "Copyright Jake Ginnivan 2013",
 
   "dependencies": {
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-    "Microsoft.Extensions.Primitives": "1.0.0-rc1-final"
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-final",
+    "Microsoft.Extensions.Primitives": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
   },
 
   "tooling": {
@@ -18,15 +20,20 @@
   },
 
   "frameworks": {
-    "dnx451": {
+    "net451": {
+      "imports": [ "dnx451" ],
       "frameworkAssemblies": {
         "System.Web": "4.0.0.0"
-      }
-    },
-    "dnxcore50": {
-      "dependencies": {
-        "System.Private.DataContractSerialization": "4.0.1"
+      },
+      "netstandard1.5": {
+        "imports": [ "dnxcore50" ],
+        "dependencies": {
+          "System.Private.DataContractSerialization": "4.0.1"
+        }
       }
     }
+  },
+  "scripts": {
+    "postcompile": "dotnet pack --no-build"
   }
 }

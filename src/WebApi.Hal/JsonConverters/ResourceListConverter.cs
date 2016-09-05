@@ -62,10 +62,10 @@ namespace WebApi.Hal.JsonConverters
         static bool IsResourceList(Type objectType)
         {
             var type = typeof(IRepresentationList);
-#if DNX451
+#if NET451
             return type.IsAssignableFrom(objectType);
 #endif
-#if DNXCORE50
+#if NETSTANDARD1_5
             return type.GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo());
 #endif
         }
@@ -73,7 +73,7 @@ namespace WebApi.Hal.JsonConverters
         static bool IsResource(Type objectType)
         {
             var type = typeof(Representation);
-#if DNX451
+#if NET451
             return type.IsAssignableFrom(objectType);
 #endif
             return typeof(Representation).IsAssignableFrom(objectType);

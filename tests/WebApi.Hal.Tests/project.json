@@ -7,16 +7,16 @@
     "tooling": {
         "defaultNamespace": "WebApi.Hal.Tests"
     },
-    "dependencies": {
-        "Moq": "4.2.1510.2205",
-        "NUnit": "3.0.1",
-      "xunit": "2.1.0",
-      "ApprovalTests": "3.0.10",
-      "ApprovalUtilities":  "3.0.10",
-        "xunit.runner.dnx": "2.1.0-rc1-build204",
-        "Microsoft.AspNet.TestHost": "1.0.0-rc1-final",
-        "WebApi.Hal": ""
-    },
+  "dependencies": {
+    "Moq": "4.2.1510.2205",
+    "NUnit": "3.0.1",
+    "xunit": "2.1.0",
+    "ApprovalTests": "3.0.10",
+    "ApprovalUtilities": "3.0.10",
+    "xunit.runner.dnx": "2.1.0-rc1-build204",
+    "Microsoft.AspNet.TestHost": "1.0.0-rc1-final",
+    "WebApi.Hal": "1.0.0-rc2-final"
+  },
     "commands": {
         "test": "xunit.runner.dnx"
     },
